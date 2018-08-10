@@ -17,6 +17,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+/**
+ * 设置静态文件路径
+ * Express 以您使用 express.static 中间件函数设置静态目录的顺序来查找文件
+ * 可以设置多个目标静态资源目录
+ */
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
